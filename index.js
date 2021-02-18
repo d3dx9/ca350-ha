@@ -146,8 +146,9 @@ port.on('open', function() {
         }
       break;
       case 'comfoair/temp/comfort/set':
-        setcomfotemp[5] = ((parseInt(message) + 20) * 2);
-        setcomfotemp[6] = parseInt(checksumcmd(setcomfotemp), 16);
+        CA350.Funcs.ComfortTemp[5] = ((parseInt(message) + 20) * 2);
+        CA350.Funcs.ComfortTemp[6] = parseInt(checksumcmd(CA350.Funcs.ComfortTemp), 16);
+        callComfoAir(CA350.Funcs.ComfortTemp);
       break;
       case 'comfoair/off':
         
